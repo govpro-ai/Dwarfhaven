@@ -34,6 +34,7 @@ declare global {
         copy: (t: string) => void;
         insertElementAtCursor: (el: Node) => void;
     }
+    const Vue: any;
 }
 
 declare const _default: null;
@@ -69,6 +70,7 @@ declare global {
             defaultTo?: string;
             useBoringAvatars?: boolean;
             useJdenticon?: boolean;
+            colorPalette?: string[];
         }) => Promise<string | null>;
     }
     interface Array<T> {
@@ -79,6 +81,7 @@ declare global {
         SVG2PNG: any;
         jdenticon: any;
     }
+    const CryptoJS: any;
 }
 
 declare const _default: null;

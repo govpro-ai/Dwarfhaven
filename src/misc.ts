@@ -7,6 +7,7 @@ declare global {
     copy: (t: string) => void
     insertElementAtCursor: (el: Node) => void
   }
+  const Vue: any
 }
 
 const toDataURL = (src: string, outputFormat: string): Promise<string> => new Promise((s, _) => {

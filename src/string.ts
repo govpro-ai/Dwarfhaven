@@ -11,7 +11,8 @@ declare global {
     getAvatar: (opts: {
       defaultTo?: string,
       useBoringAvatars?: boolean,
-      useJdenticon?: boolean
+      useJdenticon?: boolean,
+      colorPalette?: string[],
     }) => Promise<string | null>
   }
   interface Array<T> {
@@ -22,6 +23,7 @@ declare global {
     SVG2PNG: any
     jdenticon: any
   }
+  const CryptoJS: any
 }
 
 String.prototype.capitalize = function () {
@@ -68,7 +70,8 @@ String.prototype.getDomain = function () {
 String.prototype.getAvatar = async function ({
   defaultTo='assets/img/avatar.png',
   useBoringAvatars=true,
-  useJdenticon=false
+  useJdenticon=false,
+  colorPalette=["#F6F6F6", "#FFFFFF", "#2B4192", "#486FFF", "#486FFF"]
 }) {
   const email = this.toString()
 
@@ -99,7 +102,7 @@ String.prototype.getAvatar = async function ({
   const fallback = () => {
     if (useBoringAvatars) {
       try {
-        const svg = window.BoringAvatars.beam.default(email)
+        const svg = window.BoringAvatars.beam.default(email, colorPalette)
         return window.SVG2PNG(svg)
       } catch(e) {
         return defaultTo

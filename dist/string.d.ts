@@ -12,6 +12,7 @@ declare global {
             defaultTo?: string;
             useBoringAvatars?: boolean;
             useJdenticon?: boolean;
+            colorPalette?: string[];
         }) => Promise<string | null>;
     }
     interface Array<T> {
@@ -22,4 +23,5 @@ declare global {
         SVG2PNG: any;
         jdenticon: any;
     }
+    const CryptoJS: any;
 }
