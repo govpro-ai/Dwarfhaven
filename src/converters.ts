@@ -63,12 +63,12 @@ window.rgbIsDark = (r: number, g: number, b: number) => {
   return hsp < 150
 }
 
-window.image2Color = (url: string) => new Promise((s, _) => {
+window.image2Color = (url: string, dark?: boolean) => new Promise((s, _) => {
   const thief = new window.ColorThief()
   const image = new Image()
   image.onload = () => {
     const palette = thief.getPalette(image) as [number, number, number][]
-    const darkColors = palette.filter(rgb => window.rgbIsDark(...rgb))
+    const darkColors = palette.filter(rgb => (dark ?? true) == window.rgbIsDark(...rgb))
     if (darkColors.length == 0) return s(null)
     const rgb = darkColors[0]
     const color = window.rgb2Hex(...rgb)
