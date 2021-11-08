@@ -22,5 +22,4 @@ declare global {
         SVG2PNG: any;
         jdenticon: any;
     }
-    const CryptoJS: any;
 }

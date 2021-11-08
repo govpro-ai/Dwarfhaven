@@ -34,7 +34,6 @@ declare global {
         copy: (t: string) => void;
         insertElementAtCursor: (el: Node) => void;
     }
-    const Vue: any;
 }
 
 declare const _default: null;
@@ -80,7 +79,6 @@ declare global {
         SVG2PNG: any;
         jdenticon: any;
     }
-    const CryptoJS: any;
 }
 
 declare const _default: null;

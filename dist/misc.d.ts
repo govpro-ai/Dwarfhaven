@@ -7,5 +7,4 @@ declare global {
         copy: (t: string) => void;
         insertElementAtCursor: (el: Node) => void;
     }
-    const Vue: any;
 }
