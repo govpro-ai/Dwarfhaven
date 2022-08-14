@@ -11,6 +11,7 @@ declare global {
         rgbIsDark: (r: number, g: number, b: number) => boolean;
         image2Color: (url: string, dark?: boolean) => Promise<string | null>;
         ext2FontAwesomeIcon: (ext: string) => string;
+        ext2SVGIcon: (ext: string) => string;
         ColorThief: any;
     }
 }
