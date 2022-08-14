@@ -9,7 +9,7 @@ declare global {
         channel2Hex: (c: number) => string;
         rgb2Hex: (r: number, g: number, b: number) => string;
         rgbIsDark: (r: number, g: number, b: number) => boolean;
-        image2Color: (url: string) => Promise<string | null>;
+        image2Color: (url: string, dark?: boolean) => Promise<string | null>;
         ext2FontAwesomeIcon: (ext: string) => string;
         ColorThief: any;
     }

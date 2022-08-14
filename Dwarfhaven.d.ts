@@ -1,3 +1,7 @@
+/*
+Until I figure out a good way to handle Dwarfhaven imports, copy paste this declarations file where you need Dwarfhaven, then do:
+import "./Dwarfhaven"
+*/
 declare global {
     interface Date {
         toMonth: () => string;
@@ -25,8 +29,6 @@ declare global {
     }
 }
 
-declare const _default: null;
-export default _default;
 declare global {
     interface Window {
         downloadAndFillImage: (url: string, imgId: string, tries?: number) => Promise<any>;
@@ -34,11 +36,8 @@ declare global {
         copy: (t: string) => void;
         insertElementAtCursor: (el: Node) => void;
     }
-    const Vue: any;
 }
 
-declare const _default: null;
-export default _default;
 declare global {
     interface Array<T> {
         tail: (n: number) => T;
@@ -47,8 +46,6 @@ declare global {
     }
 }
 
-declare const _default: null;
-export default _default;
 declare global {
     interface Number {
         secondsToTimestring: () => string;
@@ -56,8 +53,6 @@ declare global {
     }
 }
 
-declare const _default: null;
-export default _default;
 declare global {
     interface StringConstructor {
         random: (length: number) => string;
@@ -81,11 +76,8 @@ declare global {
         SVG2PNG: any;
         jdenticon: any;
     }
-    const CryptoJS: any;
 }
 
-declare const _default: null;
-export default _default;
 declare global {
     interface Window {
         unescapeHTML: (s: string) => string;
@@ -95,7 +87,7 @@ declare global {
         channel2Hex: (c: number) => string;
         rgb2Hex: (r: number, g: number, b: number) => string;
         rgbIsDark: (r: number, g: number, b: number) => boolean;
-        image2Color: (url: string) => Promise<string | null>;
+        image2Color: (url: string, dark?: boolean) => Promise<string | null>;
         ext2FontAwesomeIcon: (ext: string) => string;
         ColorThief: any;
     }
