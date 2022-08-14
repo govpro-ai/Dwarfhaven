@@ -215,7 +215,7 @@ window.ext2FontAwesomeIcon = (ext: string) =>  {
 
 
 
-window.ext2icon = (ext: string) =>  {
+window.ext2SVGIcon = (ext: string) =>  {
   switch (ext) {
     case 'gz':
       return 'file-archive.svg'
