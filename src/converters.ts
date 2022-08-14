@@ -212,3 +212,140 @@ window.ext2FontAwesomeIcon = (ext: string) =>  {
       return 'fa-file'
   }
 }
+
+
+
+window.ext2icon = (ext: string) =>  {
+  switch (ext) {
+    case 'gz':
+      return 'file-archive.svg'
+    case 'zip':
+      return 'file-archive.svg'
+    case 'tar':
+      return 'file-archive.svg'
+    case '7z':
+      return 'file-archive.svg'
+    case 'rar':
+      return 'file-archive.svg'
+
+    case 'mp3':
+      return 'file-audio.svg'
+    case 'aac':
+      return 'file-audio.svg'
+    case 'ogg':
+      return 'file-audio.svg'
+    case 'wav':
+      return 'file-audio.svg'
+    case 'raw':
+      return 'file-audio.svg'
+
+    case 'js':
+      return 'file-code.svg'
+    case 'css':
+      return 'file-code.svg'
+    case 'cpp':
+      return 'file-code.svg'
+    case 'java':
+      return 'file-code.svg'
+    case 'class':
+      return 'file-code.svg'
+    case 'py':
+      return 'file-code.svg'
+    case 'cs':
+      return 'file-code.svg'
+    case 'gml':
+      return 'file-code.svg'
+    case 'bin':
+      return 'file-code.svg'
+    case 'asm':
+      return 'file-code.svg'
+    case 'pl':
+      return 'file-code.svg'
+    case 'hs':
+      return 'file-code.svg'
+    case 'jsx':
+      return 'file-code.svg'
+    case 'ts':
+      return 'file-code.svg'
+    case 'html':
+      return 'file-code.svg'
+    case 'json':
+      return 'file-code.svg'
+    case 'sh':
+      return 'file-code.svg'
+    case 'env':
+      return 'file-code.svg'
+
+    case 'xls':
+      return 'file-sheet.svg'
+    case 'xlsx':
+      return 'file-sheet.svg'
+    case 'csv':
+      return 'file-sheet.svg'
+    case 'numbers':
+      return 'file-sheet.svg'
+
+    case 'jpg':
+      return 'file-img.svg'
+    case 'jpeg':
+      return 'file-img.svg'
+    case 'png':
+      return 'file-img.svg'
+    case 'gif':
+      return 'file-img.svg'
+    case 'psd':
+      return 'file-img.svg'
+    case 'ai':
+      return 'file-img.svg'
+    case 'tiff':
+      return 'file-img.svg'
+    case 'bmp':
+      return 'file-img.svg'
+    case 'riff':
+      return 'file-img.svg'
+    case 'xbmp':
+      return 'file-img.svg'
+    case 'webp':
+      return 'file-img.svg'
+    case 'svg':
+      return 'file-img.svg'
+
+    case 'mp4':
+      return 'file-video.svg'
+    case 'avi':
+      return 'file-video.svg'
+    case 'wmv':
+      return 'file-video.svg'
+    case 'flv':
+      return 'file-video.svg'
+    case 'mov':
+      return 'file-video.svg'
+    case 'webm':
+      return 'file-video.svg'
+    case 'mpeg':
+      return 'file-video.svg'
+    case 'mpg':
+      return 'file-video.svg'
+    case 'mpv':
+      return 'file-video.svg'
+
+    case 'doc':
+      return 'file-doc.svg'
+    case 'docx':
+      return 'file-doc.svg'
+    case 'txt':
+      return 'file-doc.svg'
+    case 'pdf':
+      return 'file-pdf.svg'
+
+    case 'ppt':
+      return 'file-ppt.svg'
+    case 'pptx':
+      return 'file-ppt.svg'
+    case 'odp':
+      return 'file-ppt.svg'
+
+    default:
+      return 'file-file.svg'
+  }
+}
