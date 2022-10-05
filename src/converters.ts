@@ -1,4 +1,4 @@
-export default null
+export default {}
 
 declare global {
   interface Window {

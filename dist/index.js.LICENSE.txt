@@ -1,3 +1,0 @@
-//! immutable
-
-//! this has been modified from older aiko mail versions and needs checking

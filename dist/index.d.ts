@@ -6,3 +6,5 @@ import "./misc";
 import "./number";
 import "./string";
 import "./toast";
+declare const _default: {};
+export default _default;

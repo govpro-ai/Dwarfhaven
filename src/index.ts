@@ -6,3 +6,5 @@ import "./misc"
 import "./number"
 import "./string"
 import "./toast"
+
+export default {}

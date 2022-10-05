@@ -1,4 +1,4 @@
-declare const _default: null;
+declare const _default: {};
 export default _default;
 declare global {
     interface Window {
