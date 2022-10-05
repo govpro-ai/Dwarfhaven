@@ -2,13 +2,15 @@ export default null
 
 declare global {
   interface Number {
+    /** Converts a number of seconds to 12-hour time (`12:34 PM`). */
     secondsToTimestring: () => string
+    /** Converts a number of bytes to a human-readable filesize. */
     toFilesize: () => string
   }
 }
 
 Number.prototype.secondsToTimestring = function () {
-  return new Date(this.valueOf() * 1000).toISOString().substr(11, 8)
+  return new Date(this.valueOf() * 1000).toISOString().slice(11, 11+8)
 }
 
 Number.prototype.toFilesize = function () {

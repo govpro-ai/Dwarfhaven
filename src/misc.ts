@@ -2,9 +2,13 @@ export default null
 
 declare global {
   interface Window {
+    /** Downloads an image from a URL and fills it into an image tag (specified by ID).
+     * @deprecated This function no longer applies to Vue 3 and will be removed or replaced in the future. */
     downloadAndFillImage: (url: string, imgId: string, tries?: number) => Promise<any>
     app: any // FIXME: remove once typings complete
+    /** Copies a string to the clipboard. */
     copy: (t: string) => void
+    /** Inserts an element at the cursor caret. */
     insertElementAtCursor: (el: Node) => void
   }
   const Vue: any

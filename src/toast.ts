@@ -2,6 +2,7 @@ export const toast = (text: string) => null // TODO: change this to an actual to
 
 declare global {
   interface Window {
+    /** Placeholder: this function exists for polyfill purposes. */
     toast: (text: string) => null
   }
 }

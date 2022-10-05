@@ -28,6 +28,7 @@ export const post = async (url: string, data: any, token: string) => {
 
 declare global {
   interface Window {
+    /** Sends a POST request to Aiko Mail's API. */
     post: (url: string, data: any, token: string) => Promise<any>
   }
 }
