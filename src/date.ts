@@ -68,7 +68,7 @@ Date.prototype.toMonth = function () {
 
 Date.prototype.toDay = function () {
   return [
-    'Sunday'
+    'Sunday',
     'Monday',
     'Tuesday',
     'Wednesday',
