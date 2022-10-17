@@ -2,10 +2,16 @@ declare global {
   interface Date {
     /** Converts a numerical index (0-11) to the matching month string. */
     toMonth: () => string
+    /** Converts a numerical index (0-6) to the matching day of the week. */
+    toDay: () => string
     /** Adds a number of days to a date and returns the result (**immutable**). */
     addDays: (days: number) => Date
     /** Parses a JS Date to an Americanized date (`MM/DD/YYYY`) */
     toDate: () => string,
+    /** Parses a JS Date to a (nice) Americanized date (`Day Mon DD`) */
+    toNiceDate: () => string,
+    /** Parses a JS Date to a (nicer) Americanized date (`DayOfWeek Month DD`) */
+    toNicerDate: () => string,
     /** Parses a JS Date to 12-hour time (e.g. `12:34 PM`) */
     toTime: () => string,
     /** Parses a JS Date to Americanized date and 12-hour time (`MM/DD/YYYY 12:34 PM`) */
@@ -53,8 +59,23 @@ Date.prototype.toMonth = function () {
     'June',
     'July',
     'August',
-    'September'
+    'September',
+    'October',
+    'November',
+    'December'
   ][this.getMonth()]
+}
+
+Date.prototype.toDay = function () {
+  return [
+    'Sunday'
+    'Monday',
+    'Tuesday',
+    'Wednesday',
+    'Thursday',
+    'Friday',
+    'Saturday'
+  ][this.getDay()]
 }
 
 //! immutable
@@ -66,6 +87,14 @@ Date.prototype.addDays = function (days: number) {
 
 Date.prototype.toDate = function () {
   return `${this.getMonth() + 1}/${this.getDate()}/${this.getFullYear()}`
+}
+
+Date.prototype.toNiceDate = function () {
+  return `${this.toDay().slice(0, 3)} ${this.toMonth().slice(0, 3)} ${this.getDate()}`
+}
+
+Date.prototype.toNicerDate = function () {
+  return `${this.toDay()} ${this.toMonth()} ${this.getDate()}`
 }
 
 Date.prototype.toTime = function () {
