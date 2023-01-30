@@ -10,6 +10,8 @@ declare global {
     copy: (t: string) => void
     /** Inserts an element at the cursor caret. */
     insertElementAtCursor: (el: Node) => void
+    /** Converts a string into a data URL */
+    toDataURL: (src: string, outputFormat: string) => Promise<string>
   }
   const Vue: any
 }
@@ -36,9 +38,11 @@ const toDataURL = (src: string, outputFormat: string): Promise<string> => new Pr
   }
 })
 
+window.toDataURL = toDataURL
+
 window.downloadAndFillImage = async (url, imgId, tries=10, nextTick) => {
   const el = document.getElementById(imgId) as HTMLImageElement
-  if (!el && tries > 0) return setTimeout(() => window.downloadAndFillImage(url, imgId, tries-1), 500)
+  if (!el && tries > 0) return setTimeout(() => window.downloadAndFillImage(url, imgId, tries-1, nextTick), 500)
 
   await nextTick()
 
