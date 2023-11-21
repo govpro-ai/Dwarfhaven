@@ -11,8 +11,22 @@ Date.prototype.toMonth = function () {
         'June',
         'July',
         'August',
-        'September'
+        'September',
+        'October',
+        'November',
+        'December'
     ][this.getMonth()];
+};
+Date.prototype.toDay = function () {
+    return [
+        'Sunday',
+        'Monday',
+        'Tuesday',
+        'Wednesday',
+        'Thursday',
+        'Friday',
+        'Saturday'
+    ][this.getDay()];
 };
 //! immutable
 Date.prototype.addDays = function (days) {
@@ -23,8 +37,14 @@ Date.prototype.addDays = function (days) {
 Date.prototype.toDate = function () {
     return `${this.getMonth() + 1}/${this.getDate()}/${this.getFullYear()}`;
 };
+Date.prototype.toNiceDate = function () {
+    return `${this.toDay().slice(0, 3)} ${this.toMonth().slice(0, 3)} ${this.getDate()}`;
+};
+Date.prototype.toNicerDate = function () {
+    return `${this.toDay()} ${this.toMonth()} ${this.getDate()}`;
+};
 Date.prototype.toTime = function () {
-    return this.toISOString().substr(11, 8);
+    return this.toISOString().slice(11, 11 + 8);
 };
 Date.prototype.toDateTime = function () {
     return this.toDate() + ' ' + this.toTime();

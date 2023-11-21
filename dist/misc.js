@@ -21,21 +21,7 @@ const toDataURL = (src, outputFormat) => new Promise((s, _) => {
         img.src = src;
     }
 });
-window.downloadAndFillImage = async (url, imgId, tries = 10) => {
-    const el = document.getElementById(imgId);
-    if (!el && tries > 0)
-        return setTimeout(() => window.downloadAndFillImage(url, imgId, tries - 1), 500);
-    await Vue.nextTick();
-    const dataURL = await toDataURL(url, "image/png");
-    el.src = dataURL;
-    el.removeAttribute('id');
-    el.removeAttribute('data-formula');
-    const htmlContent = document.getElementsByClassName('editor')[0].children[0].innerHTML;
-    // FIXME: below is hard without typings
-    window.app.html = htmlContent;
-    window.app.editor.setContent(htmlContent);
-    return;
-};
+window.toDataURL = toDataURL;
 window.copy = (t) => {
     const el = document.createElement('textarea');
     el.value = t;

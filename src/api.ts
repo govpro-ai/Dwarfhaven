@@ -1,7 +1,10 @@
-const API: string = 'https://mail.helloaiko.com'
+let API: string = 'https://mail.helloaiko.com'
+/** Sets the API URL. */
+export const setAPI = (url: string) => API = url
 
-export const post = async (url: string, data: any, token: string) => {
-  const s = await fetch(API + url, {
+/** Sends a POST request to an endpoint under the API (set using setAPI). */
+export const POST = async (endpoint: string, data: any, token: string) => {
+  const s = await fetch(API + endpoint, {
     method: 'POST',
     body: JSON.stringify(data),
     headers: {
@@ -28,9 +31,10 @@ export const post = async (url: string, data: any, token: string) => {
 
 declare global {
   interface Window {
-    /** Sends a POST request to Aiko Mail's API. */
-    post: (url: string, data: any, token: string) => Promise<any>
+    POST: (endpoint: string, data: any, token: string) => Promise<any>
+    setAPI: (url: string) => void
   }
 }
 
-window.post = post
+window.POST = POST
+window.setAPI = setAPI

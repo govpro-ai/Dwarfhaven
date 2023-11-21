@@ -41,7 +41,7 @@ window.unescapeHTML = (
       return str
     }
   }
-)()
+)();
 
 const parser = new DOMParser()
 

@@ -2,10 +2,6 @@ export default null
 
 declare global {
   interface Window {
-    /** Downloads an image from a URL and fills it into an image tag (specified by ID).
-     * @deprecated This function no longer applies to Vue 3 and will be removed or replaced in the future. */
-    downloadAndFillImage: (url: string, imgId: string, tries?: number, nextTick: any) => Promise<any>
-    app: any // FIXME: remove once typings complete
     /** Copies a string to the clipboard. */
     copy: (t: string) => void
     /** Inserts an element at the cursor caret. */
@@ -39,23 +35,6 @@ const toDataURL = (src: string, outputFormat: string): Promise<string> => new Pr
 })
 
 window.toDataURL = toDataURL
-
-window.downloadAndFillImage = async (url, imgId, tries=10, nextTick) => {
-  const el = document.getElementById(imgId) as HTMLImageElement
-  if (!el && tries > 0) return setTimeout(() => window.downloadAndFillImage(url, imgId, tries-1, nextTick), 500)
-
-  await nextTick()
-
-  const dataURL = await toDataURL(url, "image/png")
-  el.src = dataURL
-  el.removeAttribute('id')
-  el.removeAttribute('data-formula')
-  const htmlContent = document.getElementsByClassName('editor')[0].children[0].innerHTML
-  // FIXME: below is hard without typings
-  window.app.html = htmlContent
-  window.app.editor.setContent(htmlContent)
-  return
-}
 
 window.copy = (t: string) => {
   const el = document.createElement('textarea')

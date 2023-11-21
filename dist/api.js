@@ -1,9 +1,13 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.post = void 0;
-const API = 'https://mail.helloaiko.com';
-const post = async (url, data, token) => {
-    const s = await fetch(API + url, {
+exports.POST = exports.setAPI = void 0;
+let API = 'https://mail.helloaiko.com';
+/** Sets the API URL. */
+const setAPI = (url) => API = url;
+exports.setAPI = setAPI;
+/** Sends a POST request to an endpoint under the API (set using setAPI). */
+const POST = async (endpoint, data, token) => {
+    const s = await fetch(API + endpoint, {
         method: 'POST',
         body: JSON.stringify(data),
         headers: {
@@ -28,5 +32,6 @@ const post = async (url, data, token) => {
         throw d.error;
     return d;
 };
-exports.post = post;
-window.post = exports.post;
+exports.POST = POST;
+window.POST = exports.POST;
+window.setAPI = exports.setAPI;
