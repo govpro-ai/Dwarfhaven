@@ -1,6 +1,10 @@
 {
+  {
   "name": "@govpro-ai/dwarfhaven",
   "version": "2.3.3",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
   "description": "",
   "main": "src/index.ts",
   "scripts": {
