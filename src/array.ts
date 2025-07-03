@@ -42,7 +42,7 @@ Array.prototype.sum = function<T>(K?: keyof T | ((item: T) => any)) {
     if (typeof K === 'function') {
       return this.map(K).sum()
     }
-    this.map(x => x[K]).sum()
+    return this.map(x => x[K]).sum()
   }
   if(this.some(x => {
     typeof x === 'undefined' || typeof x === 'symbol'
