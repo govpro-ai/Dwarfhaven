@@ -30,7 +30,7 @@ Array.prototype.random = function () {
 }
 
 Array.prototype.pluralize = function (itemType, pluralType) {
-  return this.length > 1 ? pluralType ?? itemType+'s' : itemType
+  return this.length != 1 ? pluralType ?? itemType+'s' : itemType
 }
 
 Array.prototype.pluralizeqty = function (itemType, pluralType) {
