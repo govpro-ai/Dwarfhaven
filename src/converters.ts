@@ -20,6 +20,8 @@ declare global {
     image2Color: (url: string, dark?: boolean) => Promise<string | null>
     /** Converts a file extension to a FontAwesom icon. */
     ext2FontAwesomeIcon: (ext: string) => string
+    /** Converts a file extension to a Lucide icon. */
+    ext2LucideIcon: (ext: string) => string
     /** Converts a file extension to an SVG icon. */
     ext2SVGIcon: (ext: string) => string
     /** Decodes a JWT token to a JSON object */
@@ -224,6 +226,133 @@ window.ext2FontAwesomeIcon = (ext: string) =>  {
       return 'fa-file'
   }
 }
+
+window.ext2LucideIcon = (ext) => {
+  switch (ext) {
+      case 'gz':
+          return 'lucide:file-archive';
+      case 'zip':
+          return 'lucide:file-archive';
+      case 'tar':
+          return 'lucide:file-archive';
+      case '7z':
+          return 'lucide:file-archive';
+      case 'rar':
+          return 'lucide:file-archive';
+      case 'mp3':
+          return 'lucide:file-audio';
+      case 'aac':
+          return 'lucide:file-audio';
+      case 'ogg':
+          return 'lucide:file-audio';
+      case 'wav':
+          return 'lucide:file-audio';
+      case 'raw':
+          return 'lucide:file-audio';
+      case 'js':
+          return 'lucide:file-code';
+      case 'css':
+          return 'lucide:file-code';
+      case 'cpp':
+          return 'lucide:file-code';
+      case 'java':
+          return 'lucide:file-code';
+      case 'class':
+          return 'lucide:file-code';
+      case 'py':
+          return 'lucide:file-code';
+      case 'cs':
+          return 'lucide:file-code';
+      case 'gml':
+          return 'lucide:file-code';
+      case 'bin':
+          return 'lucide:file-code';
+      case 'asm':
+          return 'lucide:file-code';
+      case 'pl':
+          return 'lucide:file-code';
+      case 'hs':
+          return 'lucide:file-code';
+      case 'jsx':
+          return 'lucide:file-code';
+      case 'ts':
+          return 'lucide:file-code';
+      case 'html':
+          return 'lucide:file-code';
+      case 'json':
+          return 'lucide:file-code';
+      case 'sh':
+          return 'lucide:file-code';
+      case 'env':
+          return 'lucide:file-code';
+      case 'xls':
+          return 'lucide:file-spreadsheet';
+      case 'xlsx':
+          return 'lucide:file-spreadsheet';
+      case 'csv':
+          return 'lucide:file-spreadsheet';
+      case 'numbers':
+          return 'lucide:file-spreadsheet';
+      case 'jpg':
+          return 'lucide:file-image';
+      case 'jpeg':
+          return 'lucide:file-image';
+      case 'png':
+          return 'lucide:file-image';
+      case 'gif':
+          return 'lucide:file-image';
+      case 'psd':
+          return 'lucide:file-image';
+      case 'ai':
+          return 'lucide:file-image';
+      case 'tiff':
+          return 'lucide:file-image';
+      case 'bmp':
+          return 'lucide:file-image';
+      case 'riff':
+          return 'lucide:file-image';
+      case 'xbmp':
+          return 'lucide:file-image';
+      case 'webp':
+          return 'lucide:file-image';
+      case 'svg':
+          return 'lucide:file-image';
+      case 'mp4':
+          return 'lucide:file-video';
+      case 'avi':
+          return 'lucide:file-video';
+      case 'wmv':
+          return 'lucide:file-video';
+      case 'flv':
+          return 'lucide:file-video';
+      case 'mov':
+          return 'lucide:file-video';
+      case 'webm':
+          return 'lucide:file-video';
+      case 'mpeg':
+          return 'lucide:file-video';
+      case 'mpg':
+          return 'lucide:file-video';
+      case 'mpv':
+          return 'lucide:file-video';
+      case 'doc':
+          return 'lucide:file-text';
+      case 'docx':
+          return 'lucide:file-text';
+      case 'txt':
+          return 'lucide:file-text';
+      case 'pdf':
+          return 'lucide:file-text';
+      case 'ppt':
+          return 'lucide:file-chart-pie';
+      case 'pptx':
+          return 'lucide:file-chart-pie';
+      case 'odp':
+          return 'lucide:file-chart-pie';
+      default:
+          return 'lucide:file';
+  }
+};
 
 window.ext2SVGIcon = (ext: string) =>  {
   switch (ext) {
